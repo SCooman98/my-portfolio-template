@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "client/public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "client/src/data/content.json"
+        fields:
+          - {label: "Hero Name", name: "hero.name", widget: "string"}
+          - {label: "Hero Headline", name: "hero.headline", widget: "string"}
+          - {label: "Hero Description", name: "hero.description", widget: "text"}
+          - {label: "About Bio", name: "about.bio", widget: "markdown"}
+          - {label: "Contact Email", name: "contact.email", widget: "string"}
