@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "name": "Alex Morgan",
+    "role": "Product Designer & Developer",
+    "headline": "Building digital experiences that matter.",
+    "description": "I focus on simplicity, usability, and crafting software that feels natural. Based in San Francisco, working globally.",
+    "avatar": "/assets/alex_morgan_professional_headshot.png",
+    "resume": "/assets/resume-placeholder.pdf"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "With over 5 years of experience in the intersection of design and technology, I help companies build products that are not only functional but delightful to use. My background in architecture informs my structural approach to digital design.",
+    "stats": [
+      { "label": "Years Experience", "value": "5+" },
+      { "label": "Projects Completed", "value": "40+" },
+      { "label": "Clients Worldwide", "value": "12" }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Studio Alpha",
+      "role": "Senior Product Designer",
+      "period": "2021 - Present",
+      "description": "Leading the design system initiative and overseeing product design for enterprise clients."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Rhode Island School of Design",
+      "degree": "BFA in Graphic Design",
+      "year": "2018",
+      "description": "Focused on interactive media and typography."
+    }
+  ],
+  "volunteering": [
+    {
+      "organization": "Tech for Good",
+      "role": "Mentor",
+      "period": "2020 - Present",
+      "description": "Mentoring underprivileged youth in web development basics."
+    }
+  ],
+  "contact": {
+    "email": "hello@alexmorgan.com",
+    "socials": [
+      { "name": "Twitter", "link": "#" },
+      { "name": "LinkedIn", "link": "#" }
+    ]
+  }
+}

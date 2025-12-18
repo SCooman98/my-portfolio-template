@@ -6,12 +6,12 @@ media_folder: "client/public/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "content"
-    label: "Site Content"
+  - name: "pages"
+    label: "Pages"
     files:
-      - label: "Home Page Data"
-        name: "data"
-        file: "client/src/data/content.json"
+      - label: "Home Page Settings"
+        name: "home"
+        file: "client/public/content/pages/home.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -22,7 +22,7 @@ collections:
               - {label: "Headline", name: "headline", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Avatar Image", name: "avatar", widget: "image"}
-              - {label: "Resume/CV Download", name: "resume", widget: "file", required: false}
+              - {label: "Resume PDF", name: "resume", widget: "file", required: false}
           
           - label: "About Section"
             name: "about"
@@ -37,22 +37,7 @@ collections:
                   - {label: "Label", name: "label", widget: "string"}
                   - {label: "Value", name: "value", widget: "string"}
 
-          - label: "Projects"
-            name: "projects"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Slug (URL)", name: "slug", widget: "string", hint: "fintech-dashboard"}
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Short Description", name: "description", widget: "text"}
-              - {label: "Project Image", name: "image", widget: "image"}
-              - {label: "Project Link", name: "link", widget: "string", required: false}
-              - {label: "GitHub Repo", name: "github", widget: "string", required: false}
-              - {label: "Video Demo", name: "video", widget: "string", required: false}
-              - {label: "Tags", name: "tags", widget: "list", required: false}
-              - {label: "Case Study Content", name: "content", widget: "markdown", required: false}
-          
-          - label: "Work Experience"
+          - label: "Experience"
             name: "experience"
             widget: "list"
             fields:
@@ -70,7 +55,7 @@ collections:
               - {label: "Degree", name: "degree", widget: "string"}
               - {label: "Year", name: "year", widget: "string"}
               - {label: "Description", name: "description", widget: "text", required: false}
-
+          
           - label: "Volunteering"
             name: "volunteering"
             widget: "list"
@@ -79,7 +64,7 @@ collections:
               - {label: "Organization", name: "organization", widget: "string"}
               - {label: "Role", name: "role", widget: "string"}
               - {label: "Period", name: "period", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Description", name: "description", widget: "text", required: false}
 
           - label: "References"
             name: "references"
@@ -102,3 +87,19 @@ collections:
                 fields:
                   - {label: "Platform Name", name: "name", widget: "string"}
                   - {label: "Profile Link", name: "link", widget: "string"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "client/public/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Project Link", name: "link", widget: "string", required: false}
+      - {label: "GitHub Repo", name: "github", widget: "string", required: false}
+      - {label: "Video Demo", name: "video", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Case Study Content", name: "body", widget: "markdown"}
