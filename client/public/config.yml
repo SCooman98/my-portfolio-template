@@ -1,0 +1,105 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "client/public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page Settings"
+        name: "home"
+        file: "client/public/content/pages/home.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Avatar Image", name: "avatar", widget: "image"}
+              - {label: "Resume PDF", name: "resume", widget: "file", required: false}
+          
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "markdown"}
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Value", name: "value", widget: "string"}
+
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Period", name: "period", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Institution", name: "institution", widget: "string"}
+              - {label: "Degree", name: "degree", widget: "string"}
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+          
+          - label: "Volunteering"
+            name: "volunteering"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Organization", name: "organization", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Period", name: "period", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+
+          - label: "References"
+            name: "references"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role/Company", name: "role", widget: "string"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Avatar", name: "avatar", widget: "image", required: false}
+
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - label: "Social Links"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - {label: "Platform Name", name: "name", widget: "string"}
+                  - {label: "Profile Link", name: "link", widget: "string"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "client/public/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Project Link", name: "link", widget: "string", required: false}
+      - {label: "GitHub Repo", name: "github", widget: "string", required: false}
+      - {label: "Video Demo", name: "video", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Case Study Content", name: "body", widget: "markdown"}
