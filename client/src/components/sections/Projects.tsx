@@ -1,6 +1,7 @@
 import { content } from "@/data/content";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github, Video } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export function Projects() {
   return (
@@ -21,30 +22,48 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col h-full"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary mb-4">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary mb-4 border border-border/50">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-white/90 text-black px-4 py-2 rounded-full font-medium text-sm backdrop-blur-sm">
-                    View Project
-                  </span>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {project.link && (
+                    <a href={project.link} className="bg-white/90 text-black px-4 py-2 rounded-full font-medium text-sm backdrop-blur-sm flex items-center gap-2 hover:bg-white transition-colors">
+                      Demo <ExternalLink size={14} />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a href={project.github} className="bg-white/90 text-black px-4 py-2 rounded-full font-medium text-sm backdrop-blur-sm flex items-center gap-2 hover:bg-white transition-colors">
+                      Code <Github size={14} />
+                    </a>
+                  )}
                 </div>
               </div>
-              <div>
+              
+              <div className="flex-1 flex flex-col">
                 <span className="text-sm font-medium text-muted-foreground block mb-2">
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground line-clamp-2">
+                <p className="text-muted-foreground mb-4 line-clamp-3 flex-1">
                   {project.description}
                 </p>
+                
+                {project.tags && (
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

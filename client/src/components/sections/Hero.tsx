@@ -1,5 +1,5 @@
 import { content } from "@/data/content";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -32,12 +32,16 @@ export function Hero() {
               {content.hero.primaryAction}
               <ArrowRight size={18} />
             </a>
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-medium border border-border hover:bg-secondary transition-colors"
-            >
-              {content.hero.secondaryAction}
-            </a>
+            {content.hero.resume && (
+               <a 
+                href={content.hero.resume}
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-medium border border-border hover:bg-secondary transition-colors"
+                download
+              >
+                Download CV
+                <Download size={18} />
+              </a>
+            )}
           </div>
         </motion.div>
 

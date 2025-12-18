@@ -1,5 +1,6 @@
 import { content } from "@/data/content";
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 export function About() {
   return (
@@ -10,7 +11,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">
             {content.about.title}
@@ -35,6 +36,35 @@ export function About() {
             </div>
           </div>
         </motion.div>
+
+        {/* References Section */}
+        {content.references && content.references.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto border-t border-border pt-16"
+          >
+             <h3 className="text-2xl font-heading font-bold mb-8 text-center">What People Say</h3>
+             <div className="grid md:grid-cols-2 gap-8">
+               {content.references.map((ref, i) => (
+                 <div key={i} className="bg-background p-8 rounded-xl border border-border shadow-sm relative">
+                   <Quote className="text-primary/10 absolute top-6 right-6 w-12 h-12" />
+                   <p className="text-muted-foreground italic mb-6 relative z-10">"{ref.quote}"</p>
+                   <div className="flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-primary">
+                        {ref.name[0]}
+                     </div>
+                     <div>
+                       <div className="font-bold text-sm">{ref.name}</div>
+                       <div className="text-xs text-muted-foreground">{ref.role}</div>
+                     </div>
+                   </div>
+                 </div>
+               ))}
+             </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -6,15 +6,76 @@ media_folder: "client/public/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Site Content"
     files:
-      - label: "Home Page"
-        name: "home"
+      - label: "Home Page Data"
+        name: "data"
         file: "client/src/data/content.json"
         fields:
-          - {label: "Hero Name", name: "hero.name", widget: "string"}
-          - {label: "Hero Headline", name: "hero.headline", widget: "string"}
-          - {label: "Hero Description", name: "hero.description", widget: "text"}
-          - {label: "About Bio", name: "about.bio", widget: "markdown"}
-          - {label: "Contact Email", name: "contact.email", widget: "string"}
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Avatar Image", name: "avatar", widget: "image"}
+              - {label: "Resume/CV Download", name: "resume", widget: "file", required: false}
+          
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "markdown"}
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Value", name: "value", widget: "string"}
+
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Project Image", name: "image", widget: "image"}
+              - {label: "Project Link", name: "link", widget: "string", required: false}
+              - {label: "GitHub Repo", name: "github", widget: "string", required: false}
+              - {label: "Video Demo", name: "video", widget: "string", required: false}
+          
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Period", name: "period", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+          - label: "References"
+            name: "references"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role/Company", name: "role", widget: "string"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Avatar", name: "avatar", widget: "image", required: false}
+
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - label: "Social Links"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - {label: "Platform Name", name: "name", widget: "string"}
+                  - {label: "Profile Link", name: "link", widget: "string"}
