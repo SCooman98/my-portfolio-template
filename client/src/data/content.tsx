@@ -1,8 +1,3 @@
-import avatarImage from "@assets/generated_images/alex_morgan_professional_headshot.png";
-import fintechImage from "@assets/generated_images/fintech_dashboard_interface.png";
-import ecommerceImage from "@assets/generated_images/fashion_mobile_app_interface.png";
-import archImage from "@assets/generated_images/architecture_portfolio_website.png";
-import healthImage from "@assets/generated_images/wellness_tracker_app_interface.png";
 import { ContentData } from "@/types/content";
 
 export const content: ContentData = {
@@ -11,7 +6,7 @@ export const content: ContentData = {
     role: "Product Designer & Developer",
     headline: "Building digital experiences that matter.",
     description: "I focus on simplicity, usability, and crafting software that feels natural. Based in San Francisco, working globally.",
-    avatar: avatarImage,
+    avatar: "/assets/alex_morgan_professional_headshot.png",
     resume: "/assets/resume-placeholder.pdf", // Placeholder path
     primaryAction: "View Projects",
     secondaryAction: "Contact Me"
@@ -74,7 +69,7 @@ export const content: ContentData = {
       slug: "fintech-dashboard",
       category: "UI/UX Design",
       description: "A comprehensive financial management dashboard for enterprise users focused on data visualization and accessibility.",
-      image: fintechImage,
+      image: "/assets/fintech_dashboard_interface.png",
       link: "#",
       github: "https://github.com",
       tags: ["React", "D3.js", "TypeScript"],
@@ -101,7 +96,7 @@ We adopted a modular widget-based architecture that allows users to customize th
       slug: "ecommerce-mobile-app",
       category: "Mobile Development",
       description: "A flutter-based mobile application for a sustainable fashion brand, featuring AR product try-on.",
-      image: ecommerceImage,
+      image: "/assets/fashion_mobile_app_interface.png",
       link: "#",
       tags: ["Flutter", "Dart", "Firebase"],
       content: `
@@ -123,7 +118,7 @@ After launch, the brand saw a **40% increase** in mobile conversions and a **25%
       slug: "architecture-portfolio",
       category: "Web Design",
       description: "Minimalist portfolio website designed for an award-winning architect, emphasizing visual storytelling.",
-      image: archImage,
+      image: "/assets/architecture_portfolio_website.png",
       link: "#",
       tags: ["Next.js", "Tailwind", "Framer Motion"],
       content: `
@@ -140,7 +135,7 @@ Subtle micro-interactions and smooth page transitions (using Framer Motion) give
       slug: "health-tracker",
       category: "Product Design",
       description: "Concept design for a wellness tracking application focused on mental health and habit formation.",
-      image: healthImage,
+      image: "/assets/wellness_tracker_app_interface.png",
       link: "#",
       tags: ["Figma", "Prototyping", "User Research"],
       content: `
