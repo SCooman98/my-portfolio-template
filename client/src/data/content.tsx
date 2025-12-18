@@ -1,4 +1,4 @@
-import avatarImage from "@assets/generated_images/professional_headshot_placeholder.png";
+import avatarImage from "@assets/generated_images/alex_morgan_professional_headshot.png";
 
 export const content = {
   hero: {
