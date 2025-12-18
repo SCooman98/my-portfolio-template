@@ -46,6 +46,7 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   id: number;
+  slug: string;
   title: string;
   category: string;
   description: string;
@@ -54,6 +55,7 @@ export interface ProjectItem {
   github?: string;
   video?: string;
   tags?: string[];
+  content?: string;
 }
 
 export interface ReferenceItem {

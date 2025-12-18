@@ -42,12 +42,15 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "Slug (URL)", name: "slug", widget: "string", hint: "fintech-dashboard"}
               - {label: "Category", name: "category", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Short Description", name: "description", widget: "text"}
               - {label: "Project Image", name: "image", widget: "image"}
               - {label: "Project Link", name: "link", widget: "string", required: false}
               - {label: "GitHub Repo", name: "github", widget: "string", required: false}
               - {label: "Video Demo", name: "video", widget: "string", required: false}
+              - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Case Study Content", name: "content", widget: "markdown", required: false}
           
           - label: "Experience"
             name: "experience"

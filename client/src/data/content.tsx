@@ -49,39 +49,85 @@ export const content: ContentData = {
     {
       id: 1,
       title: "Fintech Dashboard",
+      slug: "fintech-dashboard",
       category: "UI/UX Design",
-      description: "A comprehensive financial management dashboard for enterprise users. focused on data visualization and accessibility.",
+      description: "A comprehensive financial management dashboard for enterprise users focused on data visualization and accessibility.",
       image: fintechImage,
       link: "#",
       github: "https://github.com",
-      tags: ["React", "D3.js", "TypeScript"]
+      tags: ["React", "D3.js", "TypeScript"],
+      content: `
+### The Challenge
+Enterprise financial tools are often cluttered, difficult to use, and lack visual hierarchy. The goal of this project was to create a dashboard that simplifies complex financial data while maintaining robust functionality for power users.
+
+### The Solution
+We adopted a modular widget-based architecture that allows users to customize their view. 
+- **Dark Mode First**: To reduce eye strain for analysts working long hours.
+- **Data Visualization**: Custom D3.js charts that update in real-time.
+- **Accessibility**: Full WCAG 2.1 AA compliance, including keyboard navigation and screen reader support.
+
+### Key Features
+1. Real-time stock tracking
+2. Automated report generation
+3. Multi-currency support
+4. Role-based access control
+      `
     },
     {
       id: 2,
       title: "E-commerce Mobile App",
+      slug: "ecommerce-mobile-app",
       category: "Mobile Development",
       description: "A flutter-based mobile application for a sustainable fashion brand, featuring AR product try-on.",
       image: ecommerceImage,
       link: "#",
-      tags: ["Flutter", "Dart", "Firebase"]
+      tags: ["Flutter", "Dart", "Firebase"],
+      content: `
+### Overview
+Built for a sustainable fashion startup, this app needed to bridge the gap between online browsing and the in-store experience.
+
+### Technical Stack
+- **Flutter**: For cross-platform performance (iOS & Android).
+- **Firebase**: For real-time inventory updates and user authentication.
+- **ARCore/ARKit**: To implement the virtual "Try On" feature.
+
+### Impact
+After launch, the brand saw a **40% increase** in mobile conversions and a **25% reduction** in returns due to the AR sizing feature.
+      `
     },
     {
       id: 3,
       title: "Architecture Portfolio",
+      slug: "architecture-portfolio",
       category: "Web Design",
       description: "Minimalist portfolio website designed for an award-winning architect, emphasizing visual storytelling.",
       image: archImage,
       link: "#",
-      tags: ["Next.js", "Tailwind", "Framer Motion"]
+      tags: ["Next.js", "Tailwind", "Framer Motion"],
+      content: `
+### Design Philosophy
+The client wanted the website to recede into the background, letting the architectural photography take center stage. We used a strict grid system inspired by Swiss design principles.
+
+### Animation
+Subtle micro-interactions and smooth page transitions (using Framer Motion) give the site a premium feel without distracting from the content.
+      `
     },
     {
       id: 4,
       title: "Health Tracker",
+      slug: "health-tracker",
       category: "Product Design",
       description: "Concept design for a wellness tracking application focused on mental health and habit formation.",
       image: healthImage,
       link: "#",
-      tags: ["Figma", "Prototyping", "User Research"]
+      tags: ["Figma", "Prototyping", "User Research"],
+      content: `
+### User Research
+We conducted interviews with 20+ users to understand the pain points of existing habit trackers. The common feedback was that they felt "punishing" when a streak was broken.
+
+### The Pivot
+We designed a "forgiving" system that focuses on weekly consistency rather than daily streaks, using soft, calming colors and positive reinforcement.
+      `
     }
   ],
   references: [
