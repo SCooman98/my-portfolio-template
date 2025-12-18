@@ -45,6 +45,28 @@ export const content: ContentData = {
       description: "Designed and built custom portfolios and e-commerce sites for small businesses."
     }
   ],
+  education: [
+    {
+      institution: "Rhode Island School of Design",
+      degree: "BFA in Graphic Design",
+      year: "2018",
+      description: "Focused on interactive media and typography."
+    },
+    {
+      institution: "General Assembly",
+      degree: "Software Engineering Immersive",
+      year: "2019",
+      description: "Intensive bootcamp covering full-stack web development."
+    }
+  ],
+  volunteering: [
+    {
+      organization: "Tech for Good",
+      role: "Mentor",
+      period: "2020 - Present",
+      description: "Mentoring underprivileged youth in web development basics."
+    }
+  ],
   projects: [
     {
       id: 1,

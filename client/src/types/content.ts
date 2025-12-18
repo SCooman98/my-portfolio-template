@@ -44,6 +44,20 @@ export interface ExperienceItem {
   description: string;
 }
 
+export interface EducationItem {
+  institution: string;
+  degree: string;
+  year: string;
+  description?: string;
+}
+
+export interface VolunteeringItem {
+  organization: string;
+  role: string;
+  period: string;
+  description: string;
+}
+
 export interface ProjectItem {
   id: number;
   slug: string;
@@ -77,6 +91,8 @@ export interface ContentData {
   hero: HeroContent;
   about: AboutContent;
   experience: ExperienceItem[];
+  education?: EducationItem[];
+  volunteering?: VolunteeringItem[];
   projects: ProjectItem[];
   references?: ReferenceItem[];
   contact: ContactContent;

@@ -33,7 +33,7 @@ export function Projects() {
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <span className="bg-white/90 text-black px-6 py-2 rounded-full font-medium text-sm backdrop-blur-sm">
-                      View Case Study
+                      View Project
                     </span>
                   </div>
                 </div>
