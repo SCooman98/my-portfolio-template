@@ -19,6 +19,7 @@ declare module "*.svg" {
 // Data types
 export interface HeroContent {
   name: string;
+  navTitle?: string;
   role: string;
   headline: string;
   description: string;
@@ -67,7 +68,6 @@ export interface ProjectItem {
   image: string;
   link?: string;
   github?: string;
-  video?: string;
   tags?: string[];
   content?: string;
 }

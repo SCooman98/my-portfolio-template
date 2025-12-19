@@ -2,9 +2,11 @@ import { Link } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useContent } from "@/lib/useContent";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { hero } = useContent();
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -17,7 +19,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-heading font-bold text-xl tracking-tight">
-          Alex Morgan
+          {hero.navTitle || hero.name}
         </Link>
 
         {/* Desktop Nav */}

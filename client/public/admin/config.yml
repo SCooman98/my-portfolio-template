@@ -18,6 +18,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Name", name: "name", widget: "string"}
+              - {label: "Nav Title (Top Left)", name: "navTitle", widget: "string", required: false, hint: "Overrides Name in the navigation bar if set"}
               - {label: "Role", name: "role", widget: "string"}
               - {label: "Headline", name: "headline", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
