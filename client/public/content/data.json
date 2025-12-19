@@ -1,21 +1,34 @@
 {
   "hero": {
-    "name": "Alex Morgan",
-    "role": "Product Designer & Developer",
-    "headline": "Building digital experiences that matter.",
-    "description": "I focus on simplicity, usability, and crafting software that feels natural. Based in San Francisco, working globally.",
-    "avatar": "/assets/alex_morgan_professional_headshot.png",
-    "resume": "/assets/resume-placeholder.pdf",
+    "name": "Sean Coomansingh",
+    "role": "Software Developer",
+    "headline": "Building innovative technological solutions one script at a time.",
+    "description": "I focus on simplicity, usability, and crafting software that feels natural, and promotes the efficacy of businesses and personal tasks. Based in Grenada, working globally.",
+    "avatar": "/assets/whatsapp-image-2025-07-23-at-21.30.02_ab80f227.jpg",
+    "resume": "/assets/seancoomansingh_newnovember2025_resume.pdf",
     "primaryAction": "View Projects",
     "secondaryAction": "Contact Me"
   },
   "about": {
     "title": "About Me",
-    "bio": "With over 5 years of experience in the intersection of design and technology, I help companies build products that are not only functional but delightful to use. My background in architecture informs my structural approach to digital design.",
+    "bio": "With over 5 years of experience in the intersection of design and technology, I help companies build products that are not only functional but delightful to use, as well as using my skillsets in I.T, Game Design, Cybersecurity and Generative AI to create innovative, marketable and strategic projects. Moreover, I channel my creativity into outlets such as photography, graphics, marketing and media creation.",
     "stats": [
-      { "label": "Years Experience", "value": "5+" },
-      { "label": "Projects Completed", "value": "40+" },
-      { "label": "Clients Worldwide", "value": "12" }
+      {
+        "label": "Years Experience",
+        "value": "5+"
+      },
+      {
+        "label": "Projects Completed",
+        "value": "20+"
+      },
+      {
+        "label": "Clients Worldwide",
+        "value": "2"
+      },
+      {
+        "label": "Local Clients",
+        "value": "3"
+      }
     ]
   },
   "experience": [
@@ -62,58 +75,86 @@
   ],
   "projects": [
     {
-      "id": 1,
-      "title": "Fintech Dashboard",
-      "slug": "fintech-dashboard",
-      "category": "UI/UX Design",
-      "description": "A comprehensive financial management dashboard for enterprise users focused on data visualization and accessibility.",
-      "image": "/assets/fintech_dashboard_interface.png",
-      "link": "#",
       "github": "https://github.com",
-      "tags": ["React", "D3.js", "TypeScript"],
-      "content": "### The Challenge\nEnterprise financial tools are often cluttered, difficult to use, and lack visual hierarchy. The goal of this project was to create a dashboard that simplifies complex financial data while maintaining robust functionality for power users.\n\n### The Solution\nWe adopted a modular widget-based architecture that allows users to customize their view. \n- **Dark Mode First**: To reduce eye strain for analysts working long hours.\n- **Data Visualization**: Custom D3.js charts that update in real-time.\n- **Accessibility**: Full WCAG 2.1 AA compliance, including keyboard navigation and screen reader support."
+      "slug": "fintech-dashboard",
+      "title": "Fintech Dashboard",
+      "tags": [
+        "React",
+        "D3.js",
+        "TypeScript"
+      ],
+      "content": "### The Challenge\nEnterprise financial tools are often cluttered, difficult to use, and lack visual hierarchy. The goal of this project was to create a dashboard that simplifies complex financial data while maintaining robust functionality for power users.\n\n### The Solution\nWe adopted a modular widget-based architecture that allows users to customize their view. \n- **Dark Mode First**: To reduce eye strain for analysts working long hours.\n- **Data Visualization**: Custom D3.js charts that update in real-time.\n- **Accessibility**: Full WCAG 2.1 AA compliance, including keyboard navigation and screen reader support.",
+      "link": "#",
+      "id": 1,
+      "image": "/assets/fintech_dashboard_interface.png",
+      "description": "A comprehensive financial management dashboard for enterprise users focused on data visualization and accessibility.",
+      "category": "UI/UX Design"
     },
     {
-      "id": 2,
-      "title": "E-commerce Mobile App",
       "slug": "ecommerce-mobile-app",
-      "category": "Mobile Development",
-      "description": "A flutter-based mobile application for a sustainable fashion brand, featuring AR product try-on.",
+      "title": "E-commerce Mobile App",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Firebase"
+      ],
+      "content": "### Overview\nBuilt for a sustainable fashion startup, this app needed to bridge the gap between online browsing and the in-store experience.\n\n### Technical Stack\n- **Flutter**: For cross-platform performance (iOS & Android).\n- **Firebase**: For real-time inventory updates and user authentication.\n- **ARCore/ARKit**: To implement the virtual 'Try On' feature.",
+      "link": "#",
+      "id": 2,
       "image": "/assets/fashion_mobile_app_interface.png",
-      "link": "#",
-      "tags": ["Flutter", "Dart", "Firebase"],
-      "content": "### Overview\nBuilt for a sustainable fashion startup, this app needed to bridge the gap between online browsing and the in-store experience.\n\n### Technical Stack\n- **Flutter**: For cross-platform performance (iOS & Android).\n- **Firebase**: For real-time inventory updates and user authentication.\n- **ARCore/ARKit**: To implement the virtual 'Try On' feature."
+      "description": "A flutter-based mobile application for a sustainable fashion brand, featuring AR product try-on.",
+      "category": "Mobile Development"
     },
     {
-      "id": 3,
-      "title": "Architecture Portfolio",
       "slug": "architecture-portfolio",
-      "category": "Web Design",
-      "description": "Minimalist portfolio website designed for an award-winning architect, emphasizing visual storytelling.",
-      "image": "/assets/architecture_portfolio_website.png",
+      "title": "Architecture Portfolio",
+      "tags": [
+        "Next.js",
+        "Tailwind",
+        "Framer Motion"
+      ],
+      "content": "### Design Philosophy\nThe client wanted the website to recede into the background, letting the architectural photography take center stage. We used a strict grid system inspired by Swiss design principles.",
       "link": "#",
-      "tags": ["Next.js", "Tailwind", "Framer Motion"],
-      "content": "### Design Philosophy\nThe client wanted the website to recede into the background, letting the architectural photography take center stage. We used a strict grid system inspired by Swiss design principles."
+      "id": 3,
+      "image": "/assets/architecture_portfolio_website.png",
+      "description": "Minimalist portfolio website designed for an award-winning architect, emphasizing visual storytelling.",
+      "category": "Web Design"
     },
     {
-      "id": 4,
-      "title": "Health Tracker",
       "slug": "health-tracker",
-      "category": "Product Design",
-      "description": "Concept design for a wellness tracking application focused on mental health and habit formation.",
-      "image": "/assets/wellness_tracker_app_interface.png",
+      "title": "Health Tracker",
+      "tags": [
+        "Figma",
+        "Prototyping",
+        "User Research"
+      ],
+      "content": "### User Research\nWe conducted interviews with 20+ users to understand the pain points of existing habit trackers. The common feedback was that they felt 'punishing' when a streak was broken.",
       "link": "#",
-      "tags": ["Figma", "Prototyping", "User Research"],
-      "content": "### User Research\nWe conducted interviews with 20+ users to understand the pain points of existing habit trackers. The common feedback was that they felt 'punishing' when a streak was broken."
+      "id": 4,
+      "image": "/assets/wellness_tracker_app_interface.png",
+      "description": "Concept design for a wellness tracking application focused on mental health and habit formation.",
+      "category": "Product Design"
     }
   ],
   "contact": {
     "email": "hello@alexmorgan.com",
     "socials": [
-      { "name": "Twitter", "link": "#" },
-      { "name": "LinkedIn", "link": "#" },
-      { "name": "GitHub", "link": "#" },
-      { "name": "Dribbble", "link": "#" }
+      {
+        "name": "Twitter",
+        "link": "#"
+      },
+      {
+        "name": "LinkedIn",
+        "link": "#"
+      },
+      {
+        "name": "GitHub",
+        "link": "#"
+      },
+      {
+        "name": "Dribbble",
+        "link": "#"
+      }
     ]
   }
 }
