@@ -1,8 +1,10 @@
-import { content } from "@/data/content";
+import { useContent } from "@/lib/useContent";
 import { ArrowRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
+  const { hero } = useContent();
+
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
       {/* Background decoration */}
@@ -16,25 +18,25 @@ export function Hero() {
           className="order-2 md:order-1"
         >
           <span className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-4 block">
-            {content.hero.role}
+            {hero.role}
           </span>
           <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] mb-6 tracking-tight text-foreground">
-            {content.hero.headline}
+            {hero.headline}
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            {content.hero.description}
+            {hero.description}
           </p>
           <div className="flex flex-wrap gap-4">
             <a 
               href="#projects"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-all hover:gap-3"
             >
-              {content.hero.primaryAction}
+              {hero.primaryAction}
               <ArrowRight size={18} />
             </a>
-            {content.hero.resume && (
+            {hero.resume && (
                <a 
-                href={content.hero.resume}
+                href={hero.resume}
                 className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-medium border border-border hover:bg-secondary transition-colors"
                 download
               >
@@ -53,8 +55,8 @@ export function Hero() {
         >
           <div className="relative w-72 h-72 md:w-[500px] md:h-[600px] bg-secondary rounded-2xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
             <img 
-              src={content.hero.avatar} 
-              alt={content.hero.name} 
+              src={hero.avatar} 
+              alt={hero.name} 
               className="w-full h-full object-cover"
             />
           </div>

@@ -1,8 +1,8 @@
-import { content } from "@/data/content";
+import { useContent } from "@/lib/useContent";
 import { useRoute, Link } from "wouter";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Tag } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import NotFound from "./not-found";
@@ -10,8 +10,9 @@ import NotFound from "./not-found";
 export default function ProjectPage() {
   const [, params] = useRoute("/project/:slug");
   const slug = params?.slug;
+  const { projects } = useContent();
 
-  const project = content.projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return <NotFound />;

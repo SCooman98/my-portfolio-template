@@ -1,10 +1,11 @@
-import { content } from "@/data/content";
+import { useContent } from "@/lib/useContent";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Video } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
 import { Link } from "wouter";
 
 export function Projects() {
+  const { projects } = useContent();
+
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6">
@@ -16,7 +17,7 @@ export function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {content.projects.map((project, index) => (
+          {projects.map((project, index) => (
             <Link key={project.id} href={`/project/${project.slug}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

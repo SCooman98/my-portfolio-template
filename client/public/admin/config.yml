@@ -6,12 +6,12 @@ media_folder: "client/public/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "settings"
+    label: "Settings"
     files:
-      - label: "Home Page Settings"
-        name: "home"
-        file: "client/public/content/pages/home.json"
+      - label: "Site Content"
+        name: "data"
+        file: "client/public/content/data.json"
         fields:
           - label: "Hero Section"
             name: "hero"
@@ -22,7 +22,9 @@ collections:
               - {label: "Headline", name: "headline", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Avatar Image", name: "avatar", widget: "image"}
-              - {label: "Resume PDF", name: "resume", widget: "file", required: false}
+              - {label: "Resume/CV Download", name: "resume", widget: "file", required: false}
+              - {label: "Primary Action Text", name: "primaryAction", widget: "string", default: "View Projects"}
+              - {label: "Secondary Action Text", name: "secondaryAction", widget: "string", default: "Contact Me"}
           
           - label: "About Section"
             name: "about"
@@ -55,7 +57,7 @@ collections:
               - {label: "Degree", name: "degree", widget: "string"}
               - {label: "Year", name: "year", widget: "string"}
               - {label: "Description", name: "description", widget: "text", required: false}
-          
+
           - label: "Volunteering"
             name: "volunteering"
             widget: "list"
@@ -65,6 +67,20 @@ collections:
               - {label: "Role", name: "role", widget: "string"}
               - {label: "Period", name: "period", widget: "string"}
               - {label: "Description", name: "description", widget: "text", required: false}
+
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Slug (URL)", name: "slug", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Short Description", name: "description", widget: "text"}
+              - {label: "Project Image", name: "image", widget: "image"}
+              - {label: "Project Link", name: "link", widget: "string", required: false}
+              - {label: "GitHub Repo", name: "github", widget: "string", required: false}
+              - {label: "Tags", name: "tags", widget: "list", required: false}
+              - {label: "Case Study Content", name: "content", widget: "markdown", required: false}
 
           - label: "References"
             name: "references"
@@ -87,19 +103,3 @@ collections:
                 fields:
                   - {label: "Platform Name", name: "name", widget: "string"}
                   - {label: "Profile Link", name: "link", widget: "string"}
-
-  - name: "projects"
-    label: "Projects"
-    folder: "client/public/content/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Short Description", name: "description", widget: "text"}
-      - {label: "Project Image", name: "image", widget: "image"}
-      - {label: "Project Link", name: "link", widget: "string", required: false}
-      - {label: "GitHub Repo", name: "github", widget: "string", required: false}
-      - {label: "Video Demo", name: "video", widget: "string", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Case Study Content", name: "body", widget: "markdown"}

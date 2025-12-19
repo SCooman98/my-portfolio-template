@@ -1,8 +1,10 @@
-import { content } from "@/data/content";
+import { useContent } from "@/lib/useContent";
 import { motion } from "framer-motion";
 import { GraduationCap, Heart } from "lucide-react";
 
 export function Experience() {
+  const { experience, education, volunteering } = useContent();
+
   return (
     <section id="experience" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
@@ -11,7 +13,7 @@ export function Experience() {
         <div className="mb-20">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12">Experience</h2>
           <div className="max-w-3xl">
-            {content.experience.map((item, index) => (
+            {experience.map((item, index) => (
               <motion.div 
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -43,14 +45,14 @@ export function Experience() {
         <div className="grid md:grid-cols-2 gap-16 max-w-5xl">
           
           {/* Education */}
-          {content.education && content.education.length > 0 && (
+          {education && education.length > 0 && (
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <GraduationCap className="text-primary" size={24} />
                 <h3 className="text-2xl font-heading font-bold">Education</h3>
               </div>
               <div className="space-y-8">
-                {content.education.map((item, index) => (
+                {education.map((item, index) => (
                   <motion.div 
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -72,14 +74,14 @@ export function Experience() {
           )}
 
           {/* Volunteering */}
-          {content.volunteering && content.volunteering.length > 0 && (
+          {volunteering && volunteering.length > 0 && (
             <div>
               <div className="flex items-center gap-3 mb-8">
                  <Heart className="text-primary" size={24} />
                  <h3 className="text-2xl font-heading font-bold">Volunteering</h3>
               </div>
               <div className="space-y-8">
-                {content.volunteering.map((item, index) => (
+                {volunteering.map((item, index) => (
                   <motion.div 
                     key={index}
                     initial={{ opacity: 0, y: 20 }}

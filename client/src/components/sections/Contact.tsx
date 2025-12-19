@@ -1,10 +1,12 @@
-import { content } from "@/data/content";
+import { useContent } from "@/lib/useContent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 
 export function Contact() {
+  const { contact } = useContent();
+
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-6">
@@ -27,8 +29,8 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Email me at</div>
-                  <a href={`mailto:${content.contact.email}`} className="text-lg font-medium hover:text-primary transition-colors">
-                    {content.contact.email}
+                  <a href={`mailto:${contact.email}`} className="text-lg font-medium hover:text-primary transition-colors">
+                    {contact.email}
                   </a>
                 </div>
               </div>
@@ -37,7 +39,7 @@ export function Contact() {
             <div className="mt-12">
               <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Follow Me</h3>
               <div className="flex gap-4">
-                {content.contact.socials.map((social) => (
+                {contact.socials.map((social) => (
                   <a 
                     key={social.name}
                     href={social.link}
