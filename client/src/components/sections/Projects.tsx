@@ -1,73 +1,76 @@
 import { useContent } from "@/lib/useContent";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 
 export function Projects() {
   const { projects } = useContent();
 
   return (
-    <section id="projects" className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-end mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">Selected Work</h2>
-          <a href="#" className="hidden md:inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-            View all projects <ExternalLink size={14} />
-          </a>
+    <section id="projects" className="py-32 bg-background border-t border-black/5">
+      <div className="container mx-auto px-6 md:px-12">
+        
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-20">
+          <h2 className="text-5xl md:text-7xl font-heading font-medium italic text-primary">
+            Selected Works
+          </h2>
+          <span className="text-muted-foreground font-light tracking-widest uppercase text-sm mt-4 md:mt-0">
+            Curated Portfolio (2023 — Present)
+          </span>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-24">
           {projects.map((project, index) => (
             <Link key={project.id} href={`/project/${project.slug}`}>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer flex flex-col h-full"
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                className={`group cursor-pointer flex flex-col ${index % 2 === 1 ? 'md:translate-y-24' : ''}`}
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary mb-4 border border-border/50">
+                {/* Image Container */}
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#e8e4dc] mb-8">
+                  <div className="absolute inset-0 bg-primary/20 mix-blend-multiply z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover w-full h-full transition-all duration-700 group-hover:scale-105 group-hover:grayscale"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <span className="bg-white/90 text-black px-6 py-2 rounded-full font-medium text-sm backdrop-blur-sm">
-                      View Project
-                    </span>
+                  
+                  {/* Hover Overlay Icon */}
+                  <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                      <ArrowUpRight className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
                 </div>
                 
-                <div className="flex-1 flex flex-col">
-                  <span className="text-sm font-medium text-muted-foreground block mb-2">
+                {/* Content */}
+                <div className="space-y-3 relative">
+                  <span className="text-xs font-light tracking-[0.2em] uppercase text-muted-foreground block">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
+                  
+                  <h3 className="text-3xl md:text-4xl font-heading font-medium text-foreground group-hover:text-primary transition-colors group-hover:italic">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-3 flex-1">
+                  
+                  <p className="text-muted-foreground font-light leading-relaxed line-clamp-2 max-w-sm text-sm">
                     {project.description}
                   </p>
                   
-                  {project.tags && (
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground font-medium">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  {/* Decorative Line */}
+                  <div className="absolute -left-6 top-2 bottom-2 w-[1px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500" />
                 </div>
               </motion.div>
             </Link>
           ))}
         </div>
         
-        <div className="mt-12 text-center md:hidden">
-           <a href="#" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-            View all projects <ExternalLink size={14} />
+        <div className="mt-32 text-center md:hidden">
+           <a href="#" className="inline-flex items-center gap-2 text-foreground font-light uppercase tracking-widest text-sm hover:text-primary transition-colors border-b border-foreground pb-1">
+            View Full Archive
           </a>
         </div>
       </div>
