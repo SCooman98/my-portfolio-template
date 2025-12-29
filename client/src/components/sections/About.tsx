@@ -6,67 +6,98 @@ export function About() {
   const { about, references } = useContent();
 
   return (
-    <section id="about" className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">
-            {about.title}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+    <section id="about" className="py-32 bg-background relative border-t border-black/5">
+      {/* Decorative vertical line */}
+      <div className="absolute left-12 md:left-24 top-0 bottom-0 w-[1px] bg-black/5 hidden lg:block" />
+
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
+          
+          {/* Section Title */}
+          <motion.div 
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             viewport={{ once: true }}
+             className="lg:col-span-4 lg:text-right"
+          >
+            <span className="block text-sm font-light uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              Biography
+            </span>
+            <h2 className="text-4xl md:text-5xl font-heading font-medium text-foreground italic">
+              {about.title}
+            </h2>
+          </motion.div>
+
+          {/* Content */}
+          <div className="lg:col-span-7 space-y-16">
+            
+            {/* Bio */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-lg md:text-xl font-light leading-loose text-foreground/80 first-letter:text-5xl first-letter:font-heading first-letter:mr-1 first-letter:float-left first-letter:leading-none">
                 {about.bio}
               </p>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              {about.stats.map((stat) => (
-                <div key={stat.label} className="bg-background p-6 rounded-lg border border-border shadow-sm">
-                  <div className="text-3xl font-bold font-heading mb-1 text-primary">
+            </motion.div>
+
+            {/* Stats - Minimalist Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-black/5">
+              {about.stats.map((stat, index) => (
+                <motion.div 
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-4xl md:text-5xl font-heading font-light text-primary mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs font-sans uppercase tracking-widest text-muted-foreground">
                     {stat.label}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-        </motion.div>
 
-        {/* References Section */}
-        {references && references.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto border-t border-border pt-16"
-          >
-             <h3 className="text-2xl font-heading font-bold mb-8 text-center">What People Say</h3>
-             <div className="grid md:grid-cols-2 gap-8">
-               {references.map((ref, i) => (
-                 <div key={i} className="bg-background p-8 rounded-xl border border-border shadow-sm relative">
-                   <Quote className="text-primary/10 absolute top-6 right-6 w-12 h-12" />
-                   <p className="text-muted-foreground italic mb-6 relative z-10">"{ref.quote}"</p>
-                   <div className="flex items-center gap-3">
-                     <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-bold text-primary">
-                        {ref.name[0]}
-                     </div>
-                     <div>
-                       <div className="font-bold text-sm">{ref.name}</div>
-                       <div className="text-xs text-muted-foreground">{ref.role}</div>
-                     </div>
-                   </div>
+            {/* References */}
+            {references && references.length > 0 && (
+              <div className="pt-8">
+                 <h3 className="text-sm font-light uppercase tracking-[0.2em] text-muted-foreground mb-12 text-center lg:text-left">
+                   Endorsements
+                 </h3>
+                 <div className="grid md:grid-cols-2 gap-12">
+                   {references.map((ref, i) => (
+                     <motion.div 
+                        key={i} 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 + (i * 0.1) }}
+                        className="relative"
+                      >
+                       <Quote className="text-accent/30 absolute -top-6 -left-4 w-10 h-10 rotate-180" />
+                       <p className="text-foreground/90 font-serif italic text-lg mb-6 relative z-10 leading-relaxed">
+                         "{ref.quote}"
+                       </p>
+                       <div className="flex items-center gap-4">
+                         <div className="h-[1px] w-8 bg-primary" />
+                         <div>
+                           <div className="font-sans font-bold text-sm tracking-wide uppercase">{ref.name}</div>
+                           <div className="text-xs font-light text-muted-foreground mt-1">{ref.role}</div>
+                         </div>
+                       </div>
+                     </motion.div>
+                   ))}
                  </div>
-               ))}
-             </div>
-          </motion.div>
-        )}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
