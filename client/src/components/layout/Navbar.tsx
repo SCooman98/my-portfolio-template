@@ -16,9 +16,9 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-heading font-bold text-xl tracking-tight">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <Link href="/" className="font-heading font-black text-2xl tracking-tighter uppercase bg-primary px-2 border-2 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all">
           {hero.navTitle || hero.name}
         </Link>
 
@@ -28,14 +28,14 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-lg font-bold uppercase tracking-tight text-black hover:bg-black hover:text-white px-2 py-1 transition-colors"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+            className="text-lg font-bold uppercase tracking-tight bg-black text-white px-6 py-2 border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-colors"
           >
             Hire Me
           </a>

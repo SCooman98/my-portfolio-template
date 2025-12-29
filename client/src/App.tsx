@@ -20,6 +20,11 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        `}
+      </style>
       <ContentProvider>
         <Toaster />
         <Router />
