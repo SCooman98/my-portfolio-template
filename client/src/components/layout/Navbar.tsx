@@ -16,28 +16,29 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none">
-      <div className="pointer-events-auto bg-white/80 backdrop-blur-xl border border-white/40 rounded-full px-8 py-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center gap-8 mx-4 supports-[backdrop-filter]:bg-white/60">
-        <Link href="/" className="font-heading font-bold text-2xl tracking-tight text-primary hover:scale-105 transition-transform">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-black/5">
+      <div className="container mx-auto px-8 h-24 flex items-center justify-between">
+        <Link href="/" className="font-heading italic font-semibold text-3xl tracking-wide text-primary hover:text-foreground transition-colors">
           {hero.navTitle || hero.name}
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-bold text-muted-foreground hover:text-primary hover:bg-secondary/50 px-4 py-2 rounded-full transition-all"
+              className="text-sm font-light uppercase tracking-[0.2em] text-foreground hover:text-primary transition-colors relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-2 text-base font-bold bg-primary text-white px-6 py-2.5 rounded-full hover:bg-accent hover:scale-105 transition-all shadow-md hover:shadow-lg"
+            className="text-sm font-light uppercase tracking-[0.2em] border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-all"
           >
-            Hire Me ✋
+            Inquire
           </a>
         </div>
 
