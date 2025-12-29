@@ -7,68 +7,58 @@ export function Projects() {
   const { projects } = useContent();
 
   return (
-    <section id="projects" className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-end mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">Selected Work</h2>
-          <a href="#" className="hidden md:inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-            View all projects <ExternalLink size={14} />
+    <section id="projects" className="py-24 overflow-hidden">
+      <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
+         <div>
+            <span className="text-accent font-mono text-sm tracking-widest mb-2 block">// SELECTED WORKS</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">Featured Projects</h2>
+         </div>
+          <a href="#" className="hidden md:inline-flex items-center gap-2 text-muted-foreground hover:text-white transition-colors border-b border-transparent hover:border-primary pb-1">
+            View Archive <ExternalLink size={14} />
           </a>
-        </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+      <div className="pl-6 md:pl-[max(1rem,calc((100vw-1280px)/2+1.5rem))]">
+        <div className="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar pr-6">
           {projects.map((project, index) => (
             <Link key={project.id} href={`/project/${project.slug}`}>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer flex flex-col h-full"
+                className="snap-center shrink-0 w-[85vw] md:w-[600px] group cursor-pointer relative"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary mb-4 border border-border/50">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-secondary">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <span className="bg-white/90 text-black px-6 py-2 rounded-full font-medium text-sm backdrop-blur-sm">
-                      View Project
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="flex-1 flex flex-col">
-                  <span className="text-sm font-medium text-muted-foreground block mb-2">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-3 flex-1">
-                    {project.description}
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
                   
-                  {project.tags && (
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground font-medium">
-                          {tag}
+                  <div className="absolute bottom-0 left-0 p-8 w-full">
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <span className="text-accent text-xs font-bold tracking-widest mb-2 block uppercase">
+                          {project.category}
                         </span>
-                      ))}
+                        <h3 className="text-3xl font-heading font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-300 line-clamp-2 max-w-md text-sm">
+                          {project.description}
+                        </p>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <ExternalLink size={20} />
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               </motion.div>
             </Link>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center md:hidden">
-           <a href="#" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-            View all projects <ExternalLink size={14} />
-          </a>
         </div>
       </div>
     </section>
