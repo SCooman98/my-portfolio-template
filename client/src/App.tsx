@@ -22,7 +22,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
         `}
       </style>
       <ContentProvider>

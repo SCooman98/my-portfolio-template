@@ -6,50 +6,52 @@ export function Hero() {
   const { hero } = useContent();
 
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16 relative bg-background border-b-4 border-black">
-      {/* Brutalist Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:4rem_4rem] opacity-5 -z-10" />
+    <section className="min-h-screen flex items-center pt-32 pb-16 relative overflow-hidden px-4 md:px-8">
+      {/* Playful Background Blobs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-secondary/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-32 left-[20%] w-[600px] h-[600px] bg-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
       
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          {/* Main Text Block */}
+          {/* Main Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-8"
+            className="order-2 md:order-1 text-center md:text-left"
           >
-            <div className="bg-primary border-4 border-black inline-block px-4 py-2 mb-6 shadow-[6px_6px_0px_0px_#000]">
-              <span className="font-mono font-bold text-black uppercase tracking-tight text-lg">
-                // {hero.role}
+            <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white border-2 border-primary/20 shadow-sm transform -rotate-2 hover:rotate-0 transition-transform cursor-default">
+              <span className="text-sm font-bold font-heading text-primary uppercase tracking-wider">
+                👋 {hero.role}
               </span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-black leading-[0.85] mb-8 text-black uppercase tracking-tighter mix-blend-multiply">
+            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] mb-6 text-foreground">
               {hero.headline}
             </h1>
             
-            <div className="bg-white border-4 border-black p-6 max-w-xl shadow-[8px_8px_0px_0px_#000] mb-10 transform -rotate-1">
-              <p className="text-xl md:text-2xl font-mono font-bold text-black leading-tight">
-                {hero.description}
-              </p>
-            </div>
+            <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+              {hero.description}
+            </p>
             
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <a 
                 href="#projects"
-                className="bg-black text-white text-xl font-bold px-10 py-5 border-4 border-black shadow-[6px_6px_0px_0px_#E6FF00] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-3 uppercase"
+                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1 transition-all"
               >
-                {hero.primaryAction} <ArrowRight strokeWidth={4} />
+                {hero.primaryAction}
+                <ArrowRight size={20} />
               </a>
               {hero.resume && (
                  <a 
                   href={hero.resume}
-                  className="bg-white text-black text-xl font-bold px-10 py-5 border-4 border-black shadow-[6px_6px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-3 uppercase"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-foreground border-2 border-transparent hover:border-secondary shadow-md hover:shadow-lg transition-all"
                   download
                 >
-                  CV_Download <Download strokeWidth={4} />
+                  Download CV
+                  <Download size={20} />
                 </a>
               )}
             </div>
@@ -60,23 +62,37 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-4 relative"
+            className="order-1 md:order-2 flex justify-center relative"
           >
-            <div className="relative aspect-[3/4] bg-secondary border-4 border-black shadow-[12px_12px_0px_0px_#000] z-10">
+            {/* Blob Shape Background for Image */}
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] -z-10 text-secondary fill-current opacity-50 animate-pulse">
+              <path transform="translate(100 100)" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,71.5,33.2C60.8,44.9,50.7,55.4,39,63.2C27.3,71,14,76.1,-0.5,77C-15,77.9,-29.9,74.5,-42.6,67C-55.3,59.5,-65.8,47.9,-73.4,34.8C-81,21.7,-85.7,7.1,-84.3,-7C-82.9,-21.1,-75.4,-34.7,-65.1,-46.1C-54.8,-57.5,-41.7,-66.7,-28.4,-74.4C-15.1,-82.1,-1.6,-88.3,11.2,-87.3L23.9,-86.3" />
+            </svg>
+
+            <div className="relative w-72 h-72 md:w-[450px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border-[6px] border-white transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <img 
                 src={hero.avatar} 
                 alt={hero.name} 
-                className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+                className="w-full h-full object-cover"
               />
-              
-              {/* Decorative Sticker */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent rounded-full border-4 border-black flex items-center justify-center animate-spin-slow shadow-[4px_4px_0px_0px_#000]">
-                 <span className="text-3xl font-black">★</span>
-              </div>
             </div>
-            
-            {/* Background Shape */}
-            <div className="absolute top-12 -right-12 w-full h-full bg-primary border-4 border-black -z-10" />
+
+            {/* Floating Elements */}
+            <motion.div 
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-xl rotate-12"
+            >
+              <span className="text-4xl">✨</span>
+            </motion.div>
+
+            <motion.div 
+              animate={{ y: [10, -10, 10] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              className="absolute bottom-12 -left-8 bg-white p-4 rounded-2xl shadow-xl -rotate-6 max-w-[150px]"
+            >
+              <p className="font-heading font-bold text-sm text-center text-primary">Creating magic daily! 🪄</p>
+            </motion.div>
           </motion.div>
 
         </div>
